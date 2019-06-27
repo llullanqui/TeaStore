@@ -1,3 +1,8 @@
+# Proyecto de Sistemas Distribuidos 2019-1S
+- Luis Ángel Arízaga Díaz
+- Lucio Israel Arias Sela
+- John Aldo Cuesta Ágila
+
 # TeaStore #
 
 The TeaStore is a micro-service reference and test application developed by the Descartes Research Group at the University of Würzburg. The TeaStore emulates a basic web store for automatically generated, tea and tea supplies. As it is primarily a test application, it features UI elements for database generation and service resetting in addition to the store itself. 
@@ -40,3 +45,4 @@ If you use the TeaStore please consider citing us in your work:
       month = {September},
       location = {Milwaukee, WI, USA},
     }
+    
