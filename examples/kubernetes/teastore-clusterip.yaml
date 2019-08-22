@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: teastore-db
-  replicas: 2
+  replicas: 5
   template:
     metadata:
       labels:
@@ -39,7 +39,7 @@ spec:
   selector:
     matchLabels:
       app: teastore-registry
-  replicas: 2
+  replicas: 5
   template:
     metadata:
       labels:
@@ -72,7 +72,7 @@ spec:
   selector:
     matchLabels:
       app: teastore-persistence
-  replicas: 2
+  replicas: 5
   template:
     metadata:
       labels:
@@ -114,7 +114,7 @@ spec:
   selector:
     matchLabels:
       app: teastore-auth
-  replicas: 2
+  replicas: 5
   template:
     metadata:
       labels:
@@ -152,7 +152,7 @@ spec:
   selector:
     matchLabels:
       app: teastore-image
-  replicas: 2
+  replicas: 5
   template:
     metadata:
       labels:
@@ -190,7 +190,7 @@ spec:
   selector:
     matchLabels:
       app: teastore-recommender
-  replicas: 2
+  replicas: 5
   template:
     metadata:
       labels:
@@ -228,7 +228,7 @@ spec:
   selector:
     matchLabels:
       app: teastore-webui
-  replicas: 2
+  replicas: 5
   template:
     metadata:
       labels:
