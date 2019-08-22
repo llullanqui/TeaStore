@@ -5,13 +5,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: teastore
+      app: teastore-db
   replicas: 2
   template:
     metadata:
       labels:
-        app: teastore
-        run: teastore-db
+        app: teastore-db
     spec:
       containers:
       - name: teastore-db
@@ -24,14 +23,13 @@ kind: Service
 metadata:
   name: teastore-db
   labels:
-    app: teastore
-    run: teastore-db
+    app: teastore-db
 spec:
   ports:
   - port: 3306
     protocol: TCP
   selector:
-    run: teastore-db
+    app: teastore-db
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -40,13 +38,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: teastore
+      app: teastore-registry
   replicas: 2
   template:
     metadata:
       labels:
-        app: teastore
-        run: teastore-registry
+        app: teastore-registry
     spec:
       containers:
       - name: teastore-registry
@@ -59,14 +56,13 @@ kind: Service
 metadata:
   name: teastore-registry
   labels:
-    app: teastore
-    run: teastore-registry
+    app: teastore-registry
 spec:
   ports:
   - port: 8080
     protocol: TCP
   selector:
-    run: teastore-registry
+    app: teastore-registry
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -75,13 +71,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: teastore
+      app: teastore-persistence
   replicas: 2
   template:
     metadata:
       labels:
-        app: teastore
-        run: teastore-persistence
+        app: teastore-persistence
     spec:
       containers:
       - name: teastore-persistence
@@ -103,14 +98,13 @@ kind: Service
 metadata:
   name: teastore-persistence
   labels:
-    app: teastore
-    run: teastore-persistence
+    app: teastore-persistence
 spec:
   ports:
   - port: 8080
     protocol: TCP
   selector:
-    run: teastore-persistence
+    app: teastore-persistence
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -119,13 +113,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: teastore
+      app: teastore-auth
   replicas: 2
   template:
     metadata:
       labels:
-        app: teastore
-        run: teastore-auth
+        app: teastore-auth
     spec:
       containers:
       - name: teastore-auth
@@ -143,14 +136,13 @@ kind: Service
 metadata:
   name: teastore-auth
   labels:
-    app: teastore
-    run: teastore-auth
+    app: teastore-auth
 spec:
   ports:
   - port: 8080
     protocol: TCP
   selector:
-    run: teastore-auth
+    app: teastore-auth
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -159,13 +151,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: teastore
+      app: teastore-image
   replicas: 2
   template:
     metadata:
       labels:
-        app: teastore
-        run: teastore-image
+        app: teastore-image
     spec:
       containers:
       - name: teastore-image
@@ -183,14 +174,13 @@ kind: Service
 metadata:
   name: teastore-image
   labels:
-    app: teastore
-    run: teastore-image
+    app: teastore-image
 spec:
   ports:
   - port: 8080
     protocol: TCP
   selector:
-    run: teastore-image
+    app: teastore-image
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -199,13 +189,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: teastore
+      app: teastore-recommender
   replicas: 2
   template:
     metadata:
       labels:
-        app: teastore
-        run: teastore-recommender
+        app: teastore-recommender
     spec:
       containers:
       - name: teastore-recommender
@@ -223,14 +212,13 @@ kind: Service
 metadata:
   name: teastore-recommender
   labels:
-    app: teastore
-    run: teastore-recommender
+    app: teastore-recommender
 spec:
   ports:
   - port: 8080
     protocol: TCP
   selector:
-    run: teastore-recommender
+    app: teastore-recommender
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -239,13 +227,12 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: teastore
+      app: teastore-webui
   replicas: 2
   template:
     metadata:
       labels:
-        app: teastore
-        run: teastore-webui
+        app: teastore-webui
     spec:
       containers:
       - name: teastore-webui
@@ -263,8 +250,7 @@ kind: Service
 metadata:
   name: teastore-webui
   labels:
-    app: teastore
-    run: teastore-webui
+    app: teastore-webui
 spec:
   type: NodePort
   ports:
@@ -272,4 +258,4 @@ spec:
     nodePort: 30080
     protocol: TCP
   selector:
-    run: teastore-webui
+    app: teastore-webui
