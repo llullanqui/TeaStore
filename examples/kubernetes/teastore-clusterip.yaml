@@ -1,4 +1,4 @@
-apiVersion: extensions/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-db
@@ -29,7 +29,7 @@ spec:
   selector:
     run: teastore-db
 ---
-apiVersion: extensions/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-registry
@@ -60,7 +60,7 @@ spec:
   selector:
     run: teastore-registry
 ---
-apiVersion: extensions/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-persistence
@@ -100,7 +100,7 @@ spec:
   selector:
     run: teastore-persistence
 ---
-apiVersion: extensions/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-auth
@@ -136,7 +136,7 @@ spec:
   selector:
     run: teastore-auth
 ---
-apiVersion: extensions/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-image
@@ -172,7 +172,7 @@ spec:
   selector:
     run: teastore-image
 ---
-apiVersion: extensions/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-recommender
@@ -208,7 +208,7 @@ spec:
   selector:
     run: teastore-recommender
 ---
-apiVersion: extensions/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: teastore-webui
